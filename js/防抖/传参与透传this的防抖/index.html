@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            display: flex;
+            background-color: blue;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos veniam ut natus facere itaque ea vel
+            optio vitae iusto labore minima deserunt eaque, pariatur a facilis quia! In non tempore odit unde nihil
+            adipisci magnam eum aliquid exercitationem corporis nobis pariatur sit fugit ea beatae minus delectus
+            fugiat, quod libero, provident sapiente? Similique quis aliquid porro soluta. Tempora assumenda harum ullam
+            deleniti, sunt quibusdam saepe quae dolorum. Libero animi amet, impedit perferendis sint est iure
+            consectetur optio veniam id, nam recusandae nihil nesciunt similique. Sit iure, dolor fugit ipsa qui aut
+            autem eos obcaecati veniam voluptatum, temporibus magnam natus quidem?
+        </div>
+    </div>
+    <script type="module">
+        import { debounce } from './index.js'
+        // 事件处理函数，必须写成普通函数形式
+        // 如果这里写成箭头函数，其内this指向外部this为undefined，导致我们在防抖中绑定的this(触发事件的对象)无效
+        const handleScroll = function (e, num1, num2) {
+            console.log(this, e, num1, num2);
+        }
+        // 经过防抖包装过的事件处理函数
+        const debounceHandleScroll = debounce(handleScroll, 1000)
+        // 监听事件
+        const scrollContainer = document.querySelector('.container')
+        // 事件处理函数中的this指向触发事件的元素
+        // 同样此处使用普通函数形式，不能使用箭头函数否则导致函数内部this指向外部this为undefined
+        scrollContainer.addEventListener('scroll', function (e) {
+            debounceHandleScroll.call(this, e, 1, 2)
+        })
+    </script>
+</body>
+
+</html>

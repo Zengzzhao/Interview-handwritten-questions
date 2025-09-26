@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 200px;
+            width: 200px;
+            margin: auto;
+            display: flex;
+            background-color: blue;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos veniam ut natus facere itaque ea vel
+            optio vitae iusto labore minima deserunt eaque, pariatur a facilis quia! In non tempore odit unde nihil
+            adipisci magnam eum aliquid exercitationem corporis nobis pariatur sit fugit ea beatae minus delectus
+            fugiat, quod libero, provident sapiente? Similique quis aliquid porro soluta. Tempora assumenda harum ullam
+            deleniti, sunt quibusdam saepe quae dolorum. Libero animi amet, impedit perferendis sint est iure
+            consectetur optio veniam id, nam recusandae nihil nesciunt similique. Sit iure, dolor fugit ipsa qui aut
+            autem eos obcaecati veniam voluptatum, temporibus magnam natus quidem?
+        </div>
+    </div>
+    <script type="module">
+        import { debounce } from './index.js'
+        const handleScroll = function () {
+            console.log('scroll');
+        }
+        // 经过防抖包装过的事件处理函数
+        const debounceHandleScroll = debounce(handleScroll, 1000)
+        // 监听事件
+        const scrollContainer = document.querySelector('.container')
+        scrollContainer.addEventListener('scroll', debounceHandleScroll)
+    </script>
+</body>
+
+</html>
