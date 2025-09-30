@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+
+        .top {
+            flex: 0 0 10%;
+            background-color: aqua;
+        }
+
+        .main {
+            flex: 1;
+            background-color: brown;
+        }
+
+        .bottom {
+            flex: 0 0 10%;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top"></div>
+        <div class="main">
+            <h1>三行布局，上下宽度固定，中间自适应</h1>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+
+</html>
