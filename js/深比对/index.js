@@ -8,7 +8,7 @@ function deepEqual(a, b) {
         return a.length === b.length && a.every((val, index) => deepEqual(val, b[index]))
     }
     // 比较对象
-    const keysA = a.keys()
-    const keysB = b.keys()
+    const keysA = Object.keys(a)
+    const keysB = Object.keys(b)
     return keysA.length === keysB.length && keysA.every(key => deepEqual(a[key], b[key]))
 }
