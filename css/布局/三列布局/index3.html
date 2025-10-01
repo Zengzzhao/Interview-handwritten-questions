@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+        }
+
+        .left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            background-color: aqua;
+        }
+
+        .main {
+            margin: 0 100px;
+            height: 100%;
+            background-color: brown;
+        }
+
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">1</div>
+        <div class="main">
+            <h1>三列(栏)布局，左右宽度固定，中间自适应</h1>
+            <h2>绝对定位布局实现</h2>
+        </div>
+        <div class="right">2</div>
+    </div>
+</body>
+
+</html>

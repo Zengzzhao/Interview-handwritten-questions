@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+        }
+
+        .left {
+            flex: 0 0 100px;
+            background-color: aqua;
+        }
+
+        .main {
+            flex: 1;
+            background-color: brown;
+        }
+
+        .right {
+            flex: 0 0 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="main">
+            <h1>三列(栏)布局，左右宽度固定，中间自适应</h1>
+            <h2>flex弹性盒实现</h2>
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

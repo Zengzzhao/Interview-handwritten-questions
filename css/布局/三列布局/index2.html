@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 100px 1fr 100px;
+        }
+
+        .left {
+            background-color: aqua;
+        }
+
+        .main {
+            background-color: brown;
+        }
+
+        .right {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">1</div>
+        <div class="main">
+            <h1>三列(栏)布局，左右宽度固定，中间自适应</h1>
+            <h2>grid网格布局实现</h2>
+        </div>
+        <div class="right">2</div>
+    </div>
+</body>
+
+</html>
