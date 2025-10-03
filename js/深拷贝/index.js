@@ -1,5 +1,6 @@
 function deepClone(target) {
     let obj
+    // 处理引用类型
     if (typeof obj === 'object') {
         // 处理数组
         if (Array.isArray(target)) {
@@ -15,7 +16,9 @@ function deepClone(target) {
                 obj[prop] = deepClone(target[prop])
             }
         }
-    } else {
+    }
+    // 处理普通类型
+    else {
         obj = target
     }
     return obj
