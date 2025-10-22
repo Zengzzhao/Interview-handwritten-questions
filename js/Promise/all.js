@@ -20,7 +20,7 @@ function promiseAll(promises) {
                 }
             },
                 // promise数组中有一个rejected失败，直接调用最上层new Promise时的reject变为失败
-                reject)
+                err => reject(err))
         })
     })
 }
