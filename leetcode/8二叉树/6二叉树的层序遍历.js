@@ -1,8 +1,8 @@
 var levelOrder = function (root) {
     const result = [] // 最终结果
-    const queue = [] // 存放还访问的节点数组
+    const queue = [] // 存放还未访问的节点数组
     if (root) queue.push(root);
-    // 还有没有访问过的就一直访问呢
+    // 还有没有访问过的就一直访问
     while (queue.length) {
         const len = queue.length
         const curLevel = [] // 存储本层所有节点
