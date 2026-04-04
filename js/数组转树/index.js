@@ -5,6 +5,9 @@ const arr = [
     { id: 4, name: "Node 4", parentId: 2 },
     { id: 5, name: "Node 5", parentId: 2 },
     { id: 6, name: "Node 6", parentId: 3 },
+    { id: 7, name: "Node 7" },
+    { id: 8, name: "Node 8", parentId: 7 },
+    { id: 9, name: "Node 9", parentId: 7 },
 ];
 function buildTree(arr, parentId) {
     const tree = []

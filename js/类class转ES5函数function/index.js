@@ -10,7 +10,7 @@ class Exmaple {
 
 // 注意点
 // 1. ES6代码都是在严格模式下的
-// 2. 不通过new调用类，直接调用类会报TypeError: Class constructor Exmaple cannot be invoked without 'new'
+// 2. 不通过new调用类，直接调用类会报TypeError: Class constructor xxx cannot be invoked without 'new'
 // 3. 类上的方法是不可枚举的
 // 4. 类上的方法不可以new，new调用汇报TypeError: xxx is not a constructor
 

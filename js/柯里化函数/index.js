@@ -27,4 +27,3 @@ add(1, 2, 3, 4, 5)
 // 柯里化后的add函数
 const curryAdd = curry(add)
 curryAdd(1)(2)(3)(4)(5)()
-curryAdd(1)(2)(3)(4)(5)()
