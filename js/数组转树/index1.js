@@ -9,6 +9,7 @@ const arr = [
     { id: 8, name: "Node 8", parentId: 7 },
     { id: 9, name: "Node 9", parentId: 7 },
 ];
+// 递归的方法，时间复杂度高
 function buildTree(arr, parentId) {
     const tree = []
     for (const node of arr) {
