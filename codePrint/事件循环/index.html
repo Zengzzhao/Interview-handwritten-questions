@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 有值
+      setTimeout(() => {
+        console.log("setTimeout", document.body);
+      });
+      // null
+      Promise.resolve().then(() => console.log("Promise", document.body));
+      // null
+      console.log("console.log", document.body);
+    </script>
+  </head>
+  <body></body>
+  <div>hello</div>
+</html>
+
+<!-- console.log,null -->
+<!-- Promise,null -->
+<!-- setTimeout,<body></body> -->
+
+<!-- 原因 -->
+<!-- 先写的js在写的html，同步代码执行，时此时html还没解析到body标签，所以为null -->
+<!-- Promise在全局js执行完后立即执行，时此时html还没解析到body标签，所以为null -->
+<!-- setTimeout在微任务+html解析完成后执行 -->
