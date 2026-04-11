@@ -1,7 +1,7 @@
 class Scheduler {
     constructor() {
         this.count = 0 // 当前在并发调度器中的异步任务数量
-        this.queue = new Array() // 当并发调度器满了时，缓存此时加入调度器中的异步任务
+        this.queue = new Array() // 存储在等待中任务的resolve，用于唤醒等待中的任务
     }
     async add(promiseCreator) {
         // count>=2时，将任务缓存起来

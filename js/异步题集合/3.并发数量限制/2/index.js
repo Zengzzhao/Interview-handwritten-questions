@@ -1,26 +1,22 @@
 class LimitRequest {
   constructor(limit) {
     this.limit = limit;
-    this.queue = []; // 存储待执行任务的数组
     this.count = 0; // 正在执行的任务数量
+    this.queue = []; // 存储在等待中任务的resolve，用于唤醒等待中的任务
   }
-  push(task) {
-    this.queue.push(task);
-    this.run();
-  }
-  run() {
-    if (this.count >= this.limit || !this.queue.length) return;
-    const task = this.queue.shift();
-    this.count++;
-    task
-      .fn()
-      .then((res) => {
-        console.log(res);
-      })
-      .finally(() => {
-        this.count--;
-        this.run();
+  async push(task) {
+    if (this.count >= this.limit) {
+      await new Promise((resolve) => {
+        this.queue.push(resolve);
       });
+    }
+    this.count++;
+    const res = await task.fn();
+    console.log(res);
+    this.count--;
+    if (this.queue.length) {
+      this.queue.shift()();
+    }
   }
 }
 
