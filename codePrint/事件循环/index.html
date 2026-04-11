@@ -27,3 +27,7 @@
 <!-- 先写的js在写的html，同步代码执行，时此时html还没解析到body标签，所以为null -->
 <!-- Promise在全局js执行完后立即执行，时此时html还没解析到body标签，所以为null -->
 <!-- setTimeout在微任务+html解析完成后执行 -->
+
+<!-- 不改变js位置，成功打印document.body的方法 -->
+<!-- <script defer src="./main.js"></script> -->
+<!-- 将js写入外部脚本main.js中，同时给脚本加上资源提示关键词defer -->
