@@ -1,11 +1,23 @@
 # 基本结构
 
+**顺序一个接一个执行，无并发数量限制**
+
+```js
+class TaskQueue{
+  constructor(){
+    this.queue=[] // 存储当前所有需要执行的任务的队列
+  }
+}
+```
+
+**并发执行，有并发数量限制**
+
 ```js
 class TaskQueue{
   constructor(limit){
     this.limit=limit; // 最大正在执行任务数
     this.count=0; // 正在执行的任务数
-    this.queue=[] // 存储当前所有需要执行的任务的队列 / 存储在等待中任务的resolve，用于唤醒等待中的任务
+    this.queue=[] // 存储在等待中任务的resolve，用于唤醒等待中的任务
   }
 }
 ```
