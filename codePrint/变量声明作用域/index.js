@@ -12,7 +12,7 @@ for (var i = 0; i < 4; i++) {
 // var是全局作用域,将setTimeout回调放入宏任务队列中后,回调捕捉的是全局作用域中的i,此时已经变为4了
 
 // 要实现顺序输出0,1,2,3
-// 方法1:使用lei块级作用域
+// 方法1:使用let块级作用域
 for (let i = 0; i < 4; i++) {
     setTimeout(() => {
         console.log(i);
